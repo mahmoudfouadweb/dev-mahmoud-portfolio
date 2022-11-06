@@ -1,0 +1,241 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 50;
+  margin: auto 0;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s linear, opacity 0.3s linear;
+}
+
+.modal {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.3s linear, opacity 0.3s linear;
+  height: 90rem;
+  width: 80rem;
+  background-color: #181818;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+
+  // transition: all 0.5s;
+
+  .btn--close-modal {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    font-size: 20px;
+    color: #eee;
+    z-index: 100;
+    cursor: pointer;
+    transition: all 0.15s ease-in;
+
+    &:hover {
+      color: #ffd700;
+    }
+  }
+
+  .modal-box {
+    height: 85%;
+    width: 100%;
+    align-self: flex-start;
+    position: relative;
+    padding: 4.4rem;
+
+    .modal-image {
+      width: 100%;
+      height: 100%;
+      background-position: top;
+      background-size: cover;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .modal-content {
+      width: 35rem;
+      height: 5rem;
+      background-color: #ffd700;
+    }
+  }
+
+  .cta-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 20px;
+    z-index: 5;
+
+    .btn--visit {
+      color: #181818;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 4px;
+      font-family: sans-serif;
+      text-decoration: none;
+      padding: 10px 18px;
+      background: #eee;
+      margin-top: 25px;
+      float: left;
+      animation: fadeInAnimation 1s 1.8s backwards;
+      white-space: nowrap;
+      cursor: pointer;
+
+      &:hover {
+        outline: 1px solid #ffd700;
+        color: #333;
+      }
+    }
+
+    .flat {
+      color: #181818;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 4px;
+      font-family: sans-serif;
+      text-decoration: none;
+      padding: 10px 18px;
+      background: #ffd700;
+      margin-top: 25px;
+      float: left;
+      animation: fadeInAnimation 1s 1.8s backwards;
+      white-space: nowrap;
+      cursor: pointer;
+
+      &:hover {
+        outline: 1px solid #eee;
+        color: #333;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .modal {
+    height: 75rem;
+    width: 57rem;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .modal {
+    height: 52rem;
+    width: 40rem;
+  }
+}
+
+@media screen and (max-width: 1920px) {
+  .modal {
+    height: 58rem;
+    width: 41rem;
+    // top: 27.6%;
+
+    .modal-box {
+      height: 85%;
+      padding: 2.4rem;
+    }
+
+    .cta-box {
+      right: 35px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .modal {
+    height: 48rem;
+    width: 40rem;
+    top: 27.6%;
+
+    .modal-box {
+      height: 85%;
+      padding: 2.4rem;
+    }
+
+    .cta-box {
+      right: 35px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .modal {
+    height: 48.5rem;
+    width: 40rem;
+    top: 41.2%;
+
+    .modal-box {
+      height: 85%;
+      padding: 2.4rem 0.8rem;
+    }
+
+    .cta-box {
+      right: 35px;
+    }
+  }
+}
+@media screen and (max-width: 425px) {
+  .modal {
+    height: 36rem;
+    width: 25rem;
+
+    .modal-box {
+      height: 80%;
+      padding: 2.4rem;
+    }
+
+    .cta-box {
+      width: inherit;
+      padding-right: 1.1rem;
+      justify-content: flex-end;
+    }
+  }
+}
+
+// @media screen and (max-width: 375px) {
+//   //
+// }
+
+@media screen and (max-width: 320px) {
+  .modal {
+    height: 30rem;
+    width: 19.5rem;
+
+    .btn--close-modal {
+      top: 10px;
+      right: 10px;
+    }
+
+    .modal-box {
+      height: 75%;
+      padding: 2.4rem 0.8rem;
+    }
+
+    .cta-box {
+      width: inherit;
+      padding-right: 0;
+      justify-content: flex-end;
+      right: 12px;
+    }
+  }
+}
